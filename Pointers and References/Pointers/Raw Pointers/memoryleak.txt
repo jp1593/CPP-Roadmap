@@ -1,0 +1,6 @@
+Memory leakage
+
+Memory leakage occurs when a program allocates memory in the heap but does not release the memory back to the operating system when 
+it is no longer needed. Over time, this leads to exhaustion of available memory, resulting in low system performance or crashes.
+
+In C++, when you use raw pointers, you need to manage the memory allocation and deallocation manually. 

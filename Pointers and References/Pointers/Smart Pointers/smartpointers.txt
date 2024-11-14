@@ -1,0 +1,7 @@
+Unique = only one ownership if the pointer gets out of scope it destroy automatically. 
+
+Shared = Multiple instances can point to the same object and object is destroyed when the last pointer reference to it is deestructed. (it contains reference counting
+to know how many instances of the pointer point to the same object)
+
+Weak = It breaks circular references. The control block associated with the object maintains two counts: one for the number of shared_ptrs 
+(ownership count) and another for the number of weak_ptrs (weak count). (it dont increase the reference count)
