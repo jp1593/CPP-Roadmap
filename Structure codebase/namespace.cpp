@@ -1,6 +1,14 @@
 /* Namespaces
 This ones allow to name something defined by the programmer and use it into the code with the exception that namespaces has to be named different.
 
+Namespace syntax: 
+    namespace identifier {
+        // Elements
+    }
+
+*Namespaces can be nested this relies on having a namespace inside another namespace, to access them is necesarry to make it like this:
+namespace1::namespace2::element
+
 Provides a solution of name conflicts on larger projects.
 
 Namespaces allows for identically named entities as long as the namespaces are different
@@ -8,6 +16,9 @@ Namespaces allows for identically named entities as long as the namespaces are d
 To access to the thing that have been defined:
 
     namespace::(variable to access)
+
+Is possible to use the elements of a namespace only with the name of the element if you use:
+using namespace1::element [THIS CAN GENERATE CONFLICTS ON ELEMENTS OF OTHER NAMESPACES THAT HAVE THE SAME NAME]
 */
 
 #include <iostream>
