@@ -1,0 +1,16 @@
+Guards:
+Tool for preventing multiple inclusions of a header file in your project.
+
+Usually prevents redefinition problems on code files when header files has the inclusion of other .h or cpp files. 
+
+Guards: 
+
+*This Guards are established on the file which has the problem of redefinition. 
+
+#ifndef <file> <--- If its not defined 
+#define <file> <--- Define it
+
+#endif <-- Stops the definition after usage
+
+Video use for learning: https://www.youtube.com/watch?v=RU5JUHAiR18&t=133s
+ 

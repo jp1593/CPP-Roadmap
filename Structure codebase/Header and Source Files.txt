@@ -1,0 +1,5 @@
+C++ strcuture is used as the following: 
+
+.h (Header files) --> Contains class and functions declarations
+
+.cpp (Source files) --> Contains the definitions of the .h content. 
