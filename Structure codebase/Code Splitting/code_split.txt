@@ -1,0 +1,13 @@
+---Separate compilation----
+
+Each source file can be compiled independently into an object file, then they can be combined to generate the final exec. 
+
+Usefull when only a .cpp file has changes, because you only need to recompile the one that you work on.
+
+Ex:
+# Compile each source file into an object file
+g++ -c main.cpp -o main.o
+g++ -c example.cpp -o example.o
+
+# Link object files together to create the executable
+g++ main.o example.o -o my_program
