@@ -35,3 +35,4 @@ int main (){
     firststudent.getData();
     return 0;
 }
+
