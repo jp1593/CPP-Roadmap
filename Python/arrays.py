@@ -41,3 +41,14 @@ def accessElement(array, index):
         print(array[index])
 
 accessElement(second_np_array, 50); 
+
+# Linear Search
+def linearSearch(array, targetValue): 
+    if targetValue in array: 
+        for i in range(len(array)): 
+            if array[i] == targetValue: 
+                print(f"{targetValue} is on index: {i}")
+    else: 
+        print("Value not found")
+
+linearSearch(second_np_array, 200)
