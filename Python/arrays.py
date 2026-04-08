@@ -32,3 +32,12 @@ def TraverseArray(array):
         print(i)
 
 TraverseArray(second_array)
+
+# Access element
+def accessElement(array, index): 
+    if index >= len(array): 
+        print("No value on this index")
+    else: 
+        print(array[index])
+
+accessElement(second_np_array, 50); 
