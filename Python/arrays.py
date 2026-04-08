@@ -25,3 +25,10 @@ threats the array as a read-only. """
 second_np_array = np.insert(second_np_array, 1, 20)
 print(second_np_array)
 
+# Traversal Array
+""" Function of visiting each element of the array until the end of it """
+def TraverseArray(array): 
+    for i in array: 
+        print(i)
+
+TraverseArray(second_array)
