@@ -52,3 +52,7 @@ def linearSearch(array, targetValue):
         print("Value not found")
 
 linearSearch(second_np_array, 200)
+
+# Deletion of element (by index for numpy array)
+second_np_array = np.delete(second_np_array, 1)
+print(second_np_array)
