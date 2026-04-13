@@ -44,3 +44,17 @@ def traversalSearch(array):
          print(rowItem)
          
 traversalSearch(week_data)
+
+#Deletion of elements
+print("\nActual array:\n", week_data)
+
+column_deletion = np.delete(week_data, 1, 1)
+
+print("\nColumn deletion:")
+print(column_deletion)
+
+
+row_deletion = np.delete(week_data, 3, 0)
+
+print("\nRow deletion:")
+print(row_deletion)
