@@ -37,3 +37,29 @@ print(exampleList)
 # 4. Insert another list into the list
 exampleList.extend([1,2,3,4])
 print(exampleList)
+
+# Slicing and deletion on a List
+
+# Slicing
+list_slice = exampleList[2:12]
+print(list_slice)
+
+# Changing values with slice usage
+list_slice[:2] = [123, 'This is']
+print(list_slice)
+
+# Deletion
+
+# pop()
+list_slice.pop(0)
+print(list_slice)
+list_slice.pop()
+print(list_slice)
+
+# delete()
+del list_slice[0]
+print(list_slice)
+
+# remove()
+list_slice.remove(4)
+print(list_slice)
