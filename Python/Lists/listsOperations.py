@@ -15,3 +15,25 @@ for i in shopping_list:
 for i in range(len(shopping_list)): 
     shopping_list[i] = "Test"
 print(shopping_list)
+
+# Update and Inserting values in a List
+exampleList = [1,2,3,4,5,6,7]
+print(exampleList)
+
+# Update specific value
+exampleList[1] = 100
+print(exampleList)
+
+# Insert of elements
+# 1. Insert element to the beggining of the list
+exampleList.insert(0, 200)
+print(exampleList)
+# 2. Insert element to any given space in the list
+exampleList.insert(4, "SpaceJump")
+print(exampleList)
+# 3. Insert element to the end of the list
+exampleList.append("Last")
+print(exampleList)
+# 4. Insert another list into the list
+exampleList.extend([1,2,3,4])
+print(exampleList)
