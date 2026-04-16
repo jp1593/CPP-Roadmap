@@ -83,3 +83,25 @@ def linear_search(list, target):
     return -1
 
 print(linear_search(search_list, target))
+
+# List opeartions / functions
+a = [1,2,3,4]
+b = [5,6,7,8]
+
+# + operator
+print(a+b)
+
+# * operator
+print(a*2)
+
+# len()
+print(len(a))
+
+# max()
+print(max(a))
+
+# min()
+print(min(a))
+
+# sum() 
+print(sum(a))
