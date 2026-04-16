@@ -105,3 +105,15 @@ print(min(a))
 
 # sum() 
 print(sum(a))
+
+# Exercise - List operators average based on inputs entered by the user
+total = 0
+count = 0
+values_list = [] 
+while(True): 
+    inp = input('Enter a number:')
+    if inp == 'done': 
+        result = sum(values_list) / len(values_list)
+        break
+    values_list.append(float(inp))
+print("Average", result)
