@@ -63,3 +63,23 @@ print(list_slice)
 # remove()
 list_slice.remove(4)
 print(list_slice)
+
+# Element Search
+# in operator
+search_list = [10, 20, 30, 33, 40, 44, 27, 99, 102] 
+print(search_list)
+
+target = 27 
+if target in search_list: 
+    print(f"{target} is in List")
+else: 
+    print(f"{target} isn't in the List")
+
+# Linear Search
+def linear_search(list, target): 
+    for i, value in enumerate(list): 
+        if value == target: 
+            return (f"Target value: {value}, is in index: {i}")
+    return -1
+
+print(linear_search(search_list, target))
