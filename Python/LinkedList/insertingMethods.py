@@ -33,6 +33,27 @@ class SinglyList:
             self.tail = new_node
         self.length += 1
 
+    def insert(self, index, value): 
+        new_node = Node(value)
+        if self.length == 0: 
+            self.head = new_node
+            self.tail = new_node
+            return
+        elif index == 0: 
+            new_node.next = self.head
+            self.head = new_node
+        else: 
+            temp_node = self.head
+            for _ in range(index-1): 
+                temp_node = temp_node.next
+            new_node.next = temp_node.next 
+            temp_node.next = new_node 
+
+            if index == self.length:
+                self.tail = new_node 
+
+            self.length += 1
+
     # String representation of an Instance
     def __str__(self):
         temp_node = self.head
@@ -41,16 +62,19 @@ class SinglyList:
             result += str(temp_node.value)
             if temp_node.next is not None: 
                result += '-->'
-            # self.head.next = temp_node
             temp_node = temp_node.next
         return result
 
 linked_list = SinglyList() 
+linked_list.insert(6, 50)
 linked_list.append(107)
 linked_list.append(70)
 linked_list.append(88)
 linked_list.append(63)
+linked_list.append(575)
 linked_list.prepend(1)
+linked_list.insert(6, 50)
+print(linked_list.head.value, linked_list.tail.value)
 print(linked_list) 
 
 
