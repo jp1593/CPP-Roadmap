@@ -17,9 +17,8 @@ class SinglyList:
 
         # Method to add node at the beggining fo the Linked List 
         else: 
-            previous_head = self.head
+            new_node.next = self.head
             self.head = new_node
-            self.head.next = previous_head
         self.length += 1
 
     def append(self, value): 
