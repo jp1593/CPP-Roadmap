@@ -35,6 +35,8 @@ class SinglyList:
 
     def insert(self, index, value): 
         new_node = Node(value)
+        if index < 0 or index > self.length: 
+            return False
         if self.length == 0: 
             self.head = new_node
             self.tail = new_node
@@ -52,8 +54,8 @@ class SinglyList:
             if index == self.length:
                 self.tail = new_node 
 
-            self.length += 1
-
+        self.length += 1
+        return True
     # String representation of an Instance
     def __str__(self):
         temp_node = self.head
