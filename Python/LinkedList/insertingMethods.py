@@ -9,6 +9,12 @@ class SinglyList:
         self.tail = None
         self.length = 0
 
+    def traverse(self): 
+        current = self.head
+        while current: 
+            print(current.value)
+            current = current.next
+
     def prepend(self, value): 
         new_node = Node(value)
         if self.head is None: 
@@ -67,7 +73,10 @@ class SinglyList:
             temp_node = temp_node.next
         return result
 
+# Linked list creation
 linked_list = SinglyList() 
+
+# Insertion and append of nodes
 linked_list.insert(6, 50)
 linked_list.append(107)
 linked_list.append(70)
@@ -76,6 +85,8 @@ linked_list.append(63)
 linked_list.append(575)
 linked_list.prepend(1)
 linked_list.insert(6, 50)
+# Information to be printed
+linked_list.traverse()
 print(linked_list.head.value, linked_list.tail.value)
 print(linked_list) 
 
