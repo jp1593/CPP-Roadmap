@@ -46,7 +46,6 @@ class SinglyList:
             return True
         return False
             
-
 # Method to add a node at the beginning of the list
     def prepend(self, value): 
         new_node = Node(value)
@@ -95,6 +94,33 @@ class SinglyList:
 
         self.length += 1
         return True
+
+    # Method that eliminates the first node of the linked list and return that node. 
+    def pop_first(self): 
+        if self.length == 1: 
+            self.head = None
+            self.tail = None
+        else: 
+            removed_node = self.head 
+            self.head = self.head.next
+            removed_node.next = None
+        self.length -= 1
+        return  removed_node
+
+    # Method that eliminates the last node and returns it
+    def pop(self): 
+        removed_node= self.tail
+        temp = self.head
+        while temp.next is not self.tail: 
+            temp = temp.next
+        self.tail = temp
+        temp.next = None
+        self.length -= 1
+        return removed_node
+
+
+
+    
     # String representation of an Instance
     def __str__(self):
         temp_node = self.head
@@ -126,8 +152,9 @@ print("Search:", linked_list.search(63))
 print("Get:", linked_list.get(-1))
 print(linked_list.set(-1, 22))
 print(linked_list)
-
-
-            
+print(linked_list.pop_first())
+print(linked_list)
+print(linked_list.pop())
+print(linked_list)
 
 
