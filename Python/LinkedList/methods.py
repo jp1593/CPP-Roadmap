@@ -15,6 +15,15 @@ class SinglyList:
             print(current.value)
             current = current.next
 
+    def search(self, target): 
+        current = self.head
+        while current:
+            if current.value == target: 
+                return True
+            current = current.next
+        return False 
+            
+
     def prepend(self, value): 
         new_node = Node(value)
         if self.head is None: 
@@ -89,7 +98,7 @@ linked_list.insert(6, 50)
 linked_list.traverse()
 print(linked_list.head.value, linked_list.tail.value)
 print(linked_list) 
-
+print(linked_list.search(63))
 
 
 
