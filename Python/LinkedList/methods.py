@@ -9,12 +9,14 @@ class SinglyList:
         self.tail = None
         self.length = 0
 
+# Method to get all the nodes values in the linked list
     def traverse(self): 
         current = self.head
         while current: 
             print(current.value)
             current = current.next
 
+# Method to get the index of a node given it's value
     def search(self, target): 
         current = self.head
         index = 0
@@ -24,8 +26,20 @@ class SinglyList:
             current = current.next
             index += 1 
         return -1
+
+# Method to get the value of the node given it's index
+    def get(self, index): 
+        if index == -1: 
+            return self.tail
+        if index < 0 or index > self.length: 
+            return None
+        current  = self.head
+        for _ in range(index): 
+            current = current.next
+        return current
             
 
+# Method to add a node at the beginning of the list
     def prepend(self, value): 
         new_node = Node(value)
         if self.head is None: 
@@ -98,10 +112,10 @@ linked_list.prepend(1)
 linked_list.insert(6, 50)
 # Information to be printed
 linked_list.traverse()
-print(linked_list.head.value, linked_list.tail.value)
+print("Head:", linked_list.head.value,"Tail:",  linked_list.tail.value)
 print(linked_list) 
-print(linked_list.search(63))
-
+print("Search:", linked_list.search(63))
+print("Get:", linked_list.get(-1))
 
 
             
