@@ -17,11 +17,13 @@ class SinglyList:
 
     def search(self, target): 
         current = self.head
+        index = 0
         while current:
             if current.value == target: 
-                return True
+                return index
             current = current.next
-        return False 
+            index += 1 
+        return -1
             
 
     def prepend(self, value): 
