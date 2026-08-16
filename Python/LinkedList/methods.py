@@ -13,7 +13,7 @@ class SinglyList:
     def traverse(self): 
         current = self.head
         while current: 
-            print(current.value)
+            print(current.value, end=" ")
             current = current.next
 
 # Method to get the index of a node given it's value
@@ -37,6 +37,14 @@ class SinglyList:
         for _ in range(index): 
             current = current.next
         return current
+
+# Method that given and index and a value it will change the value of the node in that index
+    def set(self, index, new_value): 
+        temp = self.get(index)
+        if temp: 
+            temp.value = new_value
+            return True
+        return False
             
 
 # Method to add a node at the beginning of the list
@@ -112,10 +120,12 @@ linked_list.prepend(1)
 linked_list.insert(6, 50)
 # Information to be printed
 linked_list.traverse()
-print("Head:", linked_list.head.value,"Tail:",  linked_list.tail.value)
+print("\nHead:", linked_list.head.value,"Tail:",  linked_list.tail.value)
 print(linked_list) 
 print("Search:", linked_list.search(63))
 print("Get:", linked_list.get(-1))
+print(linked_list.set(-1, 22))
+print(linked_list)
 
 
             
