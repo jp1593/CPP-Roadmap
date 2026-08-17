@@ -109,17 +109,20 @@ class SinglyList:
 
     # Method that eliminates the last node and returns it
     def pop(self): 
-        removed_node= self.tail
-        temp = self.head
-        while temp.next is not self.tail: 
-            temp = temp.next
-        self.tail = temp
-        temp.next = None
+        if self.length == 0: 
+            return None
+        if self.length == 1: 
+            self.head = None
+            self.tail = None
+        else: 
+            removed_node= self.tail
+            temp = self.head
+            while temp.next is not self.tail: 
+                temp = temp.next
+            self.tail = temp
+            temp.next = None
         self.length -= 1
         return removed_node
-
-
-
     
     # String representation of an Instance
     def __str__(self):
