@@ -123,7 +123,26 @@ class SinglyList:
             temp.next = None
         self.length -= 1
         return removed_node
-    
+
+    # Method to remove a node given it's index
+    def remove(self, index):
+            if index < 0 or index >= self.length:
+                return None
+
+            if index == 0:
+                return self.pop_first()
+
+            if index == self.length - 1 or index == -1:
+                return self.pop()
+
+            prev_node = self.get(index - 1)
+            popped_node = prev_node.next
+
+            prev_node.next = popped_node.next
+            popped_node.next = None
+            self.length -= 1
+            return popped_node
+        
     # String representation of an Instance
     def __str__(self):
         temp_node = self.head
@@ -159,5 +178,6 @@ print(linked_list.pop_first())
 print(linked_list)
 print(linked_list.pop())
 print(linked_list)
-
+print(linked_list.remove(1))
+print(linked_list)
 
