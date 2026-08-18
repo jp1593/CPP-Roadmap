@@ -142,7 +142,12 @@ class SinglyList:
             popped_node.next = None
             self.length -= 1
             return popped_node
-        
+
+    def remove_all(self): 
+        self.head = None
+        self.tail = None
+        self.length = 0
+    
     # String representation of an Instance
     def __str__(self):
         temp_node = self.head
@@ -180,4 +185,5 @@ print(linked_list.pop())
 print(linked_list)
 print(linked_list.remove(1))
 print(linked_list)
-
+linked_list.remove_all()
+print(linked_list)
