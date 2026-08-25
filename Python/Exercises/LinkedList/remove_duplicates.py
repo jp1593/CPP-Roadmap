@@ -49,6 +49,7 @@ class LinkedList:
             if current.value in values_set: 
                 previous_node.next = next_node
                 current.next = None
+                self.length -= 1
             else: 
                 values_set.add(current.value) 
                 previous_node = current
@@ -70,4 +71,4 @@ linked_list.append(2)
 print(linked_list)
 linked_list.remove_duplicates()
 print(linked_list)
-print(linked_list.head.value, linked_list.tail.value)
+print(linked_list.head.value, linked_list.tail.value, linked_list.length)
