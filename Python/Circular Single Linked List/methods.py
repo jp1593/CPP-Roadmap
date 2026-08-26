@@ -33,6 +33,24 @@ class CSLinkedList:
             self.tail.next = new_node
         self.length += 1
 
+    def insert(self, value, index): 
+        if index > self.length or index < 0: 
+            raise Exception("Index out of range")
+
+        if index == 0: 
+            return self.prepend(value)
+
+        if index == self.length: 
+            return self.append(value)
+
+        new_node = Node(value)
+        prev_node = self.head 
+        for _ in range(index-1): 
+            prev_node = prev_node.next 
+        new_node.next = prev_node.next 
+        prev_node.next = new_node
+        self.length += 1
+            
     def __str__(self):
         temp_node = self.head 
         result = ''
@@ -50,4 +68,6 @@ cslinkedlist.append(2)
 cslinkedlist.append(3)
 print(cslinkedlist)
 cslinkedlist.prepend(20)
+print(cslinkedlist)
+cslinkedlist.insert(100, 4)
 print(cslinkedlist)
