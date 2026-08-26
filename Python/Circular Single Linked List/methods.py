@@ -21,8 +21,19 @@ class CSLinkedList:
             new_node.next = self.head
         self.length += 1
 
+    def __str__(self):
+        temp_node = self.head 
+        result = ''
+        while temp_node is not None:  
+            result += str(temp_node.value)
+            temp_node = temp_node.next
+            if temp_node == self.head: 
+                break  
+            result += ' -> '
+        return result
+    
 cslinkedlist = CSLinkedList()
 cslinkedlist.append(1)
 cslinkedlist.append(2)
 cslinkedlist.append(3)
-print(cslinkedlist.head.value, cslinkedlist.tail.value)
+print(cslinkedlist)
