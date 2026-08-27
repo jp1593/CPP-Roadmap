@@ -50,6 +50,14 @@ class CSLinkedList:
         new_node.next = prev_node.next 
         prev_node.next = new_node
         self.length += 1
+
+    def traverse(self): 
+        current = self.head 
+        while current: 
+            print(current.value)
+            current = current.next 
+            if current == self.head: 
+                break
             
     def __str__(self):
         temp_node = self.head 
@@ -71,3 +79,4 @@ cslinkedlist.prepend(20)
 print(cslinkedlist)
 cslinkedlist.insert(100, 4)
 print(cslinkedlist)
+cslinkedlist.traverse()
