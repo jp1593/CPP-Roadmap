@@ -68,7 +68,15 @@ class CSLinkedList:
             if current == self.head: 
                 break
         return False
-            
+
+    def get(self, index): 
+        current = self.head 
+        if index >= self.length or index < 0: 
+            return Exception("Invalid index")
+        for _ in range(index): 
+            current = current.next 
+        return current
+
     def __str__(self):
         temp_node = self.head 
         result = ''
@@ -89,5 +97,6 @@ cslinkedlist.prepend(20)
 print(cslinkedlist)
 cslinkedlist.insert(100, 4)
 print(cslinkedlist)
-cslinkedlist.traverse()
+# cslinkedlist.traverse()
 print(cslinkedlist.search(20))
+print(cslinkedlist.get(4).value)
