@@ -58,6 +58,16 @@ class CSLinkedList:
             current = current.next 
             if current == self.head: 
                 break
+
+    def search(self, target): 
+        current = self.head 
+        while current: 
+            if current.value == target: 
+                return True
+            current = current.next 
+            if current == self.head: 
+                break
+        return False
             
     def __str__(self):
         temp_node = self.head 
@@ -80,3 +90,4 @@ print(cslinkedlist)
 cslinkedlist.insert(100, 4)
 print(cslinkedlist)
 cslinkedlist.traverse()
+print(cslinkedlist.search(20))
