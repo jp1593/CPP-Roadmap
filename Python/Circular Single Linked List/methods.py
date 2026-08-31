@@ -102,11 +102,18 @@ class CSLinkedList:
 
 # Method that erases the first node of the list
     def pop_first(self): 
-        current_node = self.head 
-        self.head = current_node.next 
-        current_node.next = None 
-        self.tail.next = self.head 
-        self.length -= 1
+        pop_node = self.head 
+        if self.length == 0: 
+            Exception("CSLL is empty")
+        if self.length == 1: 
+            self.head = None
+            self.tail = None
+        else: 
+            self.head = pop_node.next 
+            pop_node.next = None 
+            self.tail.next = self.head 
+            self.length -= 1
+        return pop_node 
 
 # Method to print the node values of the hole list
     def __str__(self):
