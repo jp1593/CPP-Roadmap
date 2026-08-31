@@ -9,6 +9,7 @@ class CSLinkedList:
         self.tail = None
         self.length = 0
 
+# Method to add a node at the end of the list
     def append(self, value): 
         new_node = Node(value)
         if self.length == 0 : 
@@ -21,6 +22,7 @@ class CSLinkedList:
             new_node.next = self.head
         self.length += 1
 
+# Method to add a node at the beggining of the list
     def prepend(self, value): 
         new_node = Node(value)
         if self.length == 0:
@@ -33,6 +35,7 @@ class CSLinkedList:
             self.tail.next = new_node
         self.length += 1
 
+# Method to insert a node at somepoint in the list
     def insert(self, value, index): 
         if index > self.length or index < 0: 
             raise Exception("Index out of range")
@@ -51,6 +54,7 @@ class CSLinkedList:
         prev_node.next = new_node
         self.length += 1
 
+# Method to loop the list and get each node
     def traverse(self): 
         current = self.head 
         while current: 
@@ -59,6 +63,7 @@ class CSLinkedList:
             if current == self.head: 
                 break
 
+# Method to check if the target value is in a node inside the list
     def search(self, target): 
         current = self.head 
         while current: 
@@ -69,6 +74,7 @@ class CSLinkedList:
                 break
         return False
 
+# Method to get a node by the index 
     def get(self, index): 
         current = self.head 
         if index >= self.length or index < 0: 
@@ -77,6 +83,7 @@ class CSLinkedList:
             current = current.next 
         return current
 
+# Method to change the value of a node in a specific index 
     def set(self, index, value): 
         new_node = Node(value)
         current = self.head 
@@ -93,6 +100,14 @@ class CSLinkedList:
             new_node.next = remove_node.next
             current.next = new_node
 
+# Method that erases the first node of the list
+    def pop_first(self): 
+        current_node = self.head 
+        self.head = current_node.next 
+        current_node.next = None 
+        self.tail.next = self.head 
+
+# Method to print the node values of the hole list
     def __str__(self):
         temp_node = self.head 
         result = ''
@@ -117,4 +132,6 @@ print(cslinkedlist)
 print(cslinkedlist.search(20))
 print(cslinkedlist.get(4).value)
 cslinkedlist.set(5, 222)
+print(cslinkedlist)
+cslinkedlist.pop_first() 
 print(cslinkedlist)
