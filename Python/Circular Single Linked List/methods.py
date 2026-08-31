@@ -104,16 +104,40 @@ class CSLinkedList:
     def pop_first(self): 
         pop_node = self.head 
         if self.length == 0: 
-            Exception("CSLL is empty")
+            return None
         if self.length == 1: 
             self.head = None
             self.tail = None
+            self.length -= 1
+            return pop_node
         else: 
             self.head = pop_node.next 
             pop_node.next = None 
             self.tail.next = self.head 
             self.length -= 1
         return pop_node 
+
+# Method that erase the last node of the list, returing the removed node
+    def pop(self): 
+        if self.length == 0: 
+            return None
+        if self.length == 1: 
+            popped_node = self.head 
+            self.head = None 
+            self.tail = None
+            self.length -= 1
+            popped_node.next = None
+            return popped_node
+        else: 
+            previous_node = self.head
+            for _ in range(self.length-2): 
+                previous_node = previous_node.next 
+            popped_node = self.tail
+            self.tail = previous_node 
+            self.tail.next = self.head 
+            popped_node.next = None
+            self.length -= 1
+            return popped_node
 
 # Method to print the node values of the hole list
     def __str__(self):
@@ -129,17 +153,19 @@ class CSLinkedList:
     
 cslinkedlist = CSLinkedList()
 cslinkedlist.append(1)
-cslinkedlist.append(2)
-cslinkedlist.append(3)
+# cslinkedlist.append(2)
+# cslinkedlist.append(3)
 print(cslinkedlist)
 cslinkedlist.prepend(20)
 print(cslinkedlist)
-cslinkedlist.insert(100, 4)
+# cslinkedlist.insert(100, 4)
 print(cslinkedlist)
 # cslinkedlist.traverse()
 print(cslinkedlist.search(20))
-print(cslinkedlist.get(4).value)
+# print(cslinkedlist.get(4).value)
 cslinkedlist.set(5, 222)
 print(cslinkedlist)
 cslinkedlist.pop_first() 
+print(cslinkedlist)
+cslinkedlist.pop()
 print(cslinkedlist)
