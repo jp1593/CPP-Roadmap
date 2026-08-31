@@ -106,6 +106,7 @@ class CSLinkedList:
         self.head = current_node.next 
         current_node.next = None 
         self.tail.next = self.head 
+        self.length -= 1
 
 # Method to print the node values of the hole list
     def __str__(self):
