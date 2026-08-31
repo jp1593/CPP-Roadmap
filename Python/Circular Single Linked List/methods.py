@@ -78,27 +78,17 @@ class CSLinkedList:
     def get(self, index): 
         current = self.head 
         if index >= self.length or index < 0: 
-            return Exception("Invalid index")
+            raise Exception("Invalid index")
         for _ in range(index): 
             current = current.next 
         return current
 
 # Method to change the value of a node in a specific index 
     def set(self, index, value): 
-        new_node = Node(value)
-        current = self.head 
-        if index >= self.length or index < 0: 
-            return Exception("Invalid index")
-        if index == 0: 
-            new_node.next = self.head.next 
-            self.head = new_node
-            self.tail.next = new_node
-        else: 
-            for _ in range(index-1): 
-                current = current.next 
-            remove_node = current.next
-            new_node.next = remove_node.next
-            current.next = new_node
+        if index >= self.length or index < 0:
+            raise Exception("Invalid index")
+        target_node = self.get(index)  # Handles bounds check and traversal
+        target_node.value = value
 
 # Method that erases the first node of the list
     def pop_first(self): 
@@ -153,17 +143,17 @@ class CSLinkedList:
     
 cslinkedlist = CSLinkedList()
 cslinkedlist.append(1)
-# cslinkedlist.append(2)
-# cslinkedlist.append(3)
+cslinkedlist.append(2)
+cslinkedlist.append(3)
 print(cslinkedlist)
 cslinkedlist.prepend(20)
 print(cslinkedlist)
-# cslinkedlist.insert(100, 4)
+cslinkedlist.insert(100, 4)
 print(cslinkedlist)
 # cslinkedlist.traverse()
 print(cslinkedlist.search(20))
-# print(cslinkedlist.get(4).value)
-cslinkedlist.set(5, 222)
+print(cslinkedlist.get(4).value)
+cslinkedlist.set(4, 222)
 print(cslinkedlist)
 cslinkedlist.pop_first() 
 print(cslinkedlist)
