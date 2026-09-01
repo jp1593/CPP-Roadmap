@@ -129,6 +129,22 @@ class CSLinkedList:
             self.length -= 1
             return popped_node
 
+# Method to remove a node from the list based on the index 
+    def remove(self, index): 
+        if index < 0 or index >= self.length:
+             raise Exception("Index out of range")
+        if index == 0: 
+            return self.pop_first()
+        if index == (self.length-1): 
+            return self.pop() 
+        remove_node = self.get(index)
+        previous_node = self.get(index-1)
+        previous_node.next = remove_node.next 
+        remove_node.next = None
+        self.length -= 1
+        return remove_node 
+
+
 # Method to print the node values of the hole list
     def __str__(self):
         temp_node = self.head 
@@ -158,4 +174,7 @@ print(cslinkedlist)
 cslinkedlist.pop_first() 
 print(cslinkedlist)
 cslinkedlist.pop()
+print("Before remove:", cslinkedlist)
+print("Removed node:", cslinkedlist.remove(2).value)
 print(cslinkedlist)
+print(cslinkedlist.head.value, cslinkedlist.tail.value)
