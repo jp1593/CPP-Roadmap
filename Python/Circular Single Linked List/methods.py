@@ -144,6 +144,14 @@ class CSLinkedList:
         self.length -= 1
         return remove_node 
 
+# Method to delete all the nodes of the linked list
+    def delete_all(self): 
+        self.tail.next = None
+        self.head = None
+        self.tail = None
+        self.length = 0
+
+
 
 # Method to print the node values of the hole list
     def __str__(self):
@@ -177,4 +185,5 @@ cslinkedlist.pop()
 print("Before remove:", cslinkedlist)
 print("Removed node:", cslinkedlist.remove(2).value)
 print(cslinkedlist)
-print(cslinkedlist.head.value, cslinkedlist.tail.value)
+cslinkedlist.delete_all()
+print(cslinkedlist)
