@@ -146,6 +146,8 @@ class CSLinkedList:
 
 # Method to delete all the nodes of the linked list
     def delete_all(self): 
+        if self.length == 0: 
+            return None
         self.tail.next = None
         self.head = None
         self.tail = None
