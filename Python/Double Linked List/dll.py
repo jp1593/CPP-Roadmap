@@ -22,6 +22,18 @@ class DoubleLinkedList:
             self.tail = new_node 
         self.length += 1
 
+# Method to add a new node at the beginning of the dll
+    def prepend(self, value): 
+        new_node = Node(value)
+        if not self.head: 
+            self.head = new_node 
+            self.tail = new_node
+        else: 
+            new_node.next = self.head 
+            self.head.previous = new_node 
+            self.head = new_node
+        self.length += 1
+
 # Method to print the node values of the hole list
     def __str__(self):
         temp_node = self.head
@@ -39,4 +51,5 @@ dll = DoubleLinkedList()
 dll.append(1)
 dll.append(2)
 dll.append(3)
+dll.prepend(100)
 print(dll)
