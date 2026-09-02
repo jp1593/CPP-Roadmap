@@ -4,8 +4,39 @@ class Node:
         self.next = None
         self.previous = None
 
-    def __str__(self):
-        return f"{self.previous}<-{self.value}->{self.next}"
+class DoubleLinkedList:
+    def __init__(self):
+        self.head = None 
+        self.tail = None
+        self.length = 0
 
-new_node = Node(10)
-print(new_node)
+# Method to add new node at the end of the dll
+    def append(self, value): 
+        new_node = Node(value)
+        if self.length == 0: 
+            self.head = new_node
+            self.tail = new_node 
+        else: 
+            new_node.previous = self.tail 
+            self.tail.next = new_node 
+            self.tail = new_node 
+        self.length += 1
+
+# Method to print the node values of the hole list
+    def __str__(self):
+        temp_node = self.head
+        result = ''
+        while temp_node is not None:
+            result += str(temp_node.value)
+            temp_node = temp_node.next 
+            if temp_node == None: 
+                break
+            result += ' <-> '
+        return result
+            
+
+dll = DoubleLinkedList()
+dll.append(1)
+dll.append(2)
+dll.append(3)
+print(dll)
