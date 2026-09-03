@@ -116,6 +116,20 @@ class DoubleLinkedList:
         self.length += 1
         return True
 
+# Method to remove the fist node of the dll
+    def pop_first(self): 
+        if not self.head: 
+            return None
+        removed_node = self.head 
+        if self.head == self.tail: 
+            self.head = None
+            self.tail = None
+        else: 
+            self.head = removed_node.next 
+            removed_node.next.previous = None
+            removed_node.next = None
+        self.length -= 1
+        return removed_node
 
 
 
@@ -146,6 +160,8 @@ dll.set(1, 50)
 print(dll)
 dll.insert(4, 222)
 print(dll)
+dll.pop_first()
+print("After remove:", dll)
 dll.reverse()
 print(dll)
 
