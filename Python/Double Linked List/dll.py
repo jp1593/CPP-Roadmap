@@ -75,6 +75,15 @@ class DoubleLinkedList:
         return -1
         # return False (optional if it will be implemented with the boolean) 
 
+#  Method to get the value of the node given and index 
+    def get(self, index): 
+        current_node = self.head 
+        if index >= self.length or index < 0: 
+            return None
+        for _ in range(index): 
+            current_node = current_node.next
+        return current_node.value
+
 
 # Method to print the node values of the hole list
     def __str__(self):
@@ -96,8 +105,9 @@ dll.append(3)
 dll.prepend(100)
 print(dll)
 # dll.traverse()
-dll.reverse_traverse() 
+# dll.reverse_traverse() 
 print("Search:", dll.search(20))
+print("Get:", dll.get(4))
 dll.reverse()
 print(dll)
 
