@@ -87,7 +87,13 @@ class DoubleLinkedList:
             current_node = self.tail 
             for _ in range(self.length-1, index, -1): 
                 current_node = current_node.previous
-        return current_node.value
+        return current_node
+
+# Method to set a new value to a specific node based on it's position
+    def set(self, index, value): 
+        target_node = self.get(index)
+        target_node.value = value
+        return target_node
 
 
 # Method to print the node values of the hole list
@@ -112,7 +118,9 @@ print(dll)
 # dll.traverse()
 # dll.reverse_traverse() 
 print("Search:", dll.search(20))
-print("Get:", dll.get(2))
+print("Get:", dll.get(2).value)
+dll.set(1, 50)
+print(dll)
 dll.reverse()
 print(dll)
 
