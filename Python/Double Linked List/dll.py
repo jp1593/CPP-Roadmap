@@ -41,6 +41,12 @@ class DoubleLinkedList:
             print(current_node.value)
             current_node = current_node.next 
 
+    def reverse_traverse(self): 
+        current_node = self.tail 
+        while current_node: 
+            print(current_node.value)
+            current_node = current_node.previous
+
 # Method to reverse the dll references
     def reverse(self): 
         current_node = self.tail 
@@ -76,5 +82,7 @@ dll.append(3)
 dll.prepend(100)
 print(dll)
 # dll.traverse()
+dll.reverse_traverse() 
 dll.reverse()
 print(dll)
+
