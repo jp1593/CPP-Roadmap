@@ -97,6 +97,27 @@ class DoubleLinkedList:
             return True
         return False
 
+# Method to insert a new node in any position in the dll
+    def insert(self, index, value):
+        if index < 0 or index > self.length: 
+            return None
+        if index == 0 or not self.head: 
+            self.prepend(value)
+        elif index == self.length: 
+            self.append(value)
+        else: 
+            new_node = Node(value)
+            previous_node = self.get(index-1)
+            next_node = previous_node.next 
+            new_node.previous = previous_node
+            new_node.next = next_node
+            next_node.previous = new_node 
+            previous_node.next = new_node
+        self.length += 1
+        return True
+
+
+
 
 # Method to print the node values of the hole list
     def __str__(self):
@@ -122,6 +143,8 @@ print(dll)
 print("Search:", dll.search(20))
 print("Get:", dll.get(2).value)
 dll.set(1, 50)
+print(dll)
+dll.insert(4, 222)
 print(dll)
 dll.reverse()
 print(dll)
