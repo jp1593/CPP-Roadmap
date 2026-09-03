@@ -62,6 +62,14 @@ class DoubleLinkedList:
         self.tail = origin_head
         self.head = origin_tail 
 
+# Method that searches if there is a node with the given value inside the dll
+    def search(self, value):
+        current_node = self.head  
+        while current_node: 
+            if current_node.value == value: 
+                return True 
+            current_node = current_node.next 
+        return False
 
 
 # Method to print the node values of the hole list
@@ -85,6 +93,7 @@ dll.prepend(100)
 print(dll)
 # dll.traverse()
 dll.reverse_traverse() 
+print(dll.search(3))
 dll.reverse()
 print(dll)
 
