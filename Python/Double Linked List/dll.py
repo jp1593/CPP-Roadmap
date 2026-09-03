@@ -62,14 +62,18 @@ class DoubleLinkedList:
         self.tail = origin_head
         self.head = origin_tail 
 
-# Method that searches if there is a node with the given value inside the dll
+# Method that searches if there is a node with the given value inside the dll (or returns the index instead of the boolean)
     def search(self, value):
         current_node = self.head  
+        index = 0
         while current_node: 
             if current_node.value == value: 
-                return True 
+                return index
+                # return True (optional if it will be implemented with the boolean)
             current_node = current_node.next 
-        return False
+            index += 1
+        return -1
+        # return False (optional if it will be implemented with the boolean) 
 
 
 # Method to print the node values of the hole list
@@ -87,13 +91,13 @@ class DoubleLinkedList:
 
 dll = DoubleLinkedList()
 dll.append(1)
-dll.append(2)
+dll.append(20)
 dll.append(3)
 dll.prepend(100)
 print(dll)
 # dll.traverse()
 dll.reverse_traverse() 
-print(dll.search(3))
+print("Search:", dll.search(20))
 dll.reverse()
 print(dll)
 
