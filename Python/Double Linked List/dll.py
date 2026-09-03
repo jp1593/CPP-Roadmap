@@ -41,6 +41,7 @@ class DoubleLinkedList:
             print(current_node.value)
             current_node = current_node.next 
 
+# Method to traverse the dll from the end to the beggining
     def reverse_traverse(self): 
         current_node = self.tail 
         while current_node: 
@@ -60,7 +61,8 @@ class DoubleLinkedList:
             current_node = current_node.next 
         self.tail = origin_head
         self.head = origin_tail 
-        
+
+
 
 # Method to print the node values of the hole list
     def __str__(self):
