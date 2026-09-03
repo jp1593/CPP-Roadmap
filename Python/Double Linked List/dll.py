@@ -34,6 +34,28 @@ class DoubleLinkedList:
             self.head = new_node
         self.length += 1
 
+# Method to access each node in the dll 
+    def traverse(self): 
+        current_node = self.head 
+        while current_node: 
+            print(current_node.value)
+            current_node = current_node.next 
+
+# Method to reverse the dll references
+    def reverse(self): 
+        current_node = self.tail 
+        origin_head = self.head 
+        origin_tail = self.tail
+        while current_node: 
+            next = current_node.next 
+            prev = current_node.previous 
+            current_node.next = prev 
+            current_node.previous = next 
+            current_node = current_node.next 
+        self.tail = origin_head
+        self.head = origin_tail 
+        
+
 # Method to print the node values of the hole list
     def __str__(self):
         temp_node = self.head
@@ -52,4 +74,7 @@ dll.append(1)
 dll.append(2)
 dll.append(3)
 dll.prepend(100)
+print(dll)
+# dll.traverse()
+dll.reverse()
 print(dll)
