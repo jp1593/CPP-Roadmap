@@ -77,11 +77,16 @@ class DoubleLinkedList:
 
 #  Method to get the value of the node given and index 
     def get(self, index): 
-        current_node = self.head 
         if index >= self.length or index < 0: 
             return None
-        for _ in range(index): 
-            current_node = current_node.next
+        if index < self.length // 2: 
+            current_node = self.head 
+            for _ in range(index): 
+                current_node = current_node.next
+        else: 
+            current_node = self.tail 
+            for _ in range(self.length-1, index, -1): 
+                current_node = current_node.previous
         return current_node.value
 
 
@@ -107,7 +112,7 @@ print(dll)
 # dll.traverse()
 # dll.reverse_traverse() 
 print("Search:", dll.search(20))
-print("Get:", dll.get(4))
+print("Get:", dll.get(2))
 dll.reverse()
 print(dll)
 
