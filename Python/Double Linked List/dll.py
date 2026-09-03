@@ -92,8 +92,10 @@ class DoubleLinkedList:
 # Method to set a new value to a specific node based on it's position
     def set(self, index, value): 
         target_node = self.get(index)
-        target_node.value = value
-        return target_node
+        if target_node: 
+            target_node.value = value
+            return True
+        return False
 
 
 # Method to print the node values of the hole list
