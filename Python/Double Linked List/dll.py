@@ -131,6 +131,21 @@ class DoubleLinkedList:
         self.length -= 1
         return removed_node
 
+# Method to remove the last element of the dll
+    def pop(self): 
+        if not self.head: 
+            return None
+        removed_node = self.tail
+        if self.head == self.tail: 
+            self.head = None
+            self.tail = None
+        else: 
+            self.tail = removed_node.previous 
+            self.tail.next = None 
+            removed_node.previous = None 
+        self.length -= 1
+        return removed_node
+            
 
 
 # Method to print the node values of the hole list
@@ -161,7 +176,9 @@ print(dll)
 dll.insert(4, 222)
 print(dll)
 dll.pop_first()
-print("After remove:", dll)
+print("Pop_First:", dll)
+dll.pop()
+print("Pop: ", dll)
 dll.reverse()
 print(dll)
 
