@@ -34,7 +34,7 @@ class CircularDoubleLinkedList:
             values.append(str(current_node.value))
             current_node =  current_node.next 
         values.append(str(current_node.value))
-        return " <-> ".join(values) + " <-> (head)"
+        return " <-> ".join(values) 
 
 cdll = CircularDoubleLinkedList()
 cdll.append(10)
