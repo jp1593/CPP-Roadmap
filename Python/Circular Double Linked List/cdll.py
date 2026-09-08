@@ -50,6 +50,15 @@ class CircularDoubleLinkedList:
             if current_node == self.head: 
                 break
 
+    def reverse_traversal(self): 
+        if not self.head: 
+            return 
+        current_node = self.tail 
+        while True: 
+            print(current_node.value)
+            current_node = current_node.previous 
+            if current_node == self.tail: break
+
     def __str__(self):
         if self.length == 0: 
             return ""
@@ -68,3 +77,5 @@ cdll.prepend(51)
 cdll.append(30)
 print(cdll)
 cdll.traverse()
+print(cdll)
+cdll.reverse_traversal()
