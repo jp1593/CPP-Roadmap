@@ -25,6 +25,22 @@ class CircularDoubleLinkedList:
             self.tail = new_node 
         self.length += 1
 
+    def prepend(self, value): 
+        new_node = Node(value)
+        if not self.head: 
+            new_node.previous = new_node 
+            new_node.next = new_node 
+            self.head = new_node 
+            self.tail = new_node 
+        else: 
+            self.head.previous = new_node 
+            self.tail.next = new_node 
+            new_node.next = self.head 
+            new_node.previous = self.tail 
+            self.head = new_node
+
+        self.length += 1
+
     def __str__(self):
         if self.length == 0: 
             return ""
@@ -39,5 +55,6 @@ class CircularDoubleLinkedList:
 cdll = CircularDoubleLinkedList()
 cdll.append(10)
 cdll.append(20)
+cdll.prepend(51)
 cdll.append(30)
 print(cdll)
