@@ -24,3 +24,20 @@ class CircularDoubleLinkedList:
             self.tail.next = new_node 
             self.tail = new_node 
         self.length += 1
+
+    def __str__(self):
+        if self.length == 0: 
+            return ""
+        current_node = self.head 
+        values = []
+        while current_node.next is not self.head: 
+            values.append(str(current_node.value))
+            current_node =  current_node.next 
+        values.append(str(current_node.value))
+        return " <-> ".join(values) + " <-> (head)"
+
+cdll = CircularDoubleLinkedList()
+cdll.append(10)
+cdll.append(20)
+cdll.append(30)
+print(cdll)
